@@ -22,8 +22,8 @@ export interface SurveyForm {
 @Injectable()
 export class SurveyFormService {
   // Define API
-  //api = 'https://diamondprojectapi-y6u04o8b.b4a.run/';
-  api = 'http://localhost:3000';
+  api = 'https://diamondprojectapi-y6u04o8b.b4a.run/';
+  //api = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
   /*========================================
     CRUD Methods for consuming RESTful API
@@ -54,9 +54,9 @@ export class SurveyFormService {
 
   // user submit survey
   submit(formData: SurveyForm): Observable<any> {
-    console.log('form record', formData);
+    //console.log('form record', formData);
     return this.http
-      .post<any>(this.api + '/surveyx/submit', formData)
+      .post<any>(this.api + '/survey/partners', formData)
       .pipe(retry(1), catchError(this.handleError));
   }
 
