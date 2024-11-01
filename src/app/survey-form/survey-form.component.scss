@@ -1,0 +1,146 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+
+  .writeup {
+    padding: 2em;
+    width: 80%;
+
+    h3 {
+      color: #ffab40;
+      font-size: 1.5em;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1em;
+
+      .form-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        mat-form-field {
+          width: 45%;
+        }
+
+        .range {
+          width: 45%;
+          margin-bottom: 25px;
+
+          h4 {
+            text-align: left;
+            font-size: 1.3em;
+          }
+
+          mat-radio-group, section {
+            display: flex;
+            flex-wrap: wrap;
+
+            mat-radio-button, mat-checkbox {
+              border-left: 1px dotted #ccc;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        button {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.invalid-field {
+  border: 1px solid rgb(216, 159, 159);
+  border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .body {
+    flex-direction: column;
+
+    .writeup {
+      padding: 0.1em;
+      width: 100%;
+  
+      h3 {
+        color: #ffab40;
+        font-size: 1em;
+      }
+  
+      p {
+        text-align: justify;
+        font-size: 14px;
+        //line-height: 1.5em;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em;
+  
+        .form-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+  
+          mat-form-field {
+            width: 100%;
+          }
+  
+          .range {
+            width: 100%;
+            margin-bottom: 15px;
+  
+            h4 {
+              font-size: 1em;
+              font-weight: bold;
+            }
+  
+            mat-radio-group, section {
+              display: flex;
+              flex-wrap: wrap;
+              text-align: left;
+  
+              mat-radio-button, mat-checkbox {
+                border-left: 1px dotted #ccc;
+                margin-right: 10px;
+                text-align: left;
+              }
+            }
+          }
+        }
+  
+        .btn {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          margin-bottom: 1em;
+          button {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,30 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="logo"><async-logo></async-logo></span>
+    <span class="nav-spacer"></span>
+    
+    <ng-content>
+     <!--  <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">
+        Home
+      </a> -->
+      <a mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>home</mat-icon> Partners Platforms
+      </a>
+    </ng-content>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <a mat-menu-item href="https://diamondprojectonline.com/" target="_blank">
+    <mat-icon>public</mat-icon>Our Website
+  </a>
+  <a mat-menu-item href="https://partners.diamondprojectonline.com/" target="_blank">
+    <mat-icon>dashboard</mat-icon>Our Platform
+  </a>
+</mat-menu>
+
+<div *ngIf="isLoading">
+  <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+</div>
