@@ -19,7 +19,7 @@
               <mat-checkbox (change)="onChallengeChange($event)" value="Time constraints from prospects">Time constraints from prospects</mat-checkbox>
               <mat-checkbox (change)="onChallengeChange($event)" value="Negative perceptions of network marketing">Negative perceptions of network marketing</mat-checkbox>
               <mat-checkbox (change)="onChallengeChange($event)" value="Competition from other organizations">Competition from other organizations</mat-checkbox>
-              <mat-checkbox (change)="onChallengeChange($event)" value="Other">Other (Please specify)</mat-checkbox>
+              <!-- <mat-checkbox (change)="onChallengeChange($event)" value="Other">Other (Please specify)</mat-checkbox> -->
             </section>
             <mat-error *ngIf="surveyForm.get('challenges')?.invalid && surveyForm.get('challenges')?.touched">
               Please select at least one option.
@@ -63,7 +63,7 @@
               <mat-checkbox (change)="onStrategyChange($event)" value="Online presentations">Online presentations</mat-checkbox>
               <mat-checkbox (change)="onStrategyChange($event)" value="Email marketing">Email marketing</mat-checkbox>
               <mat-checkbox (change)="onStrategyChange($event)" value="Referrals (Contact Recommendataion)">Referrals (Contact Recommendataion)</mat-checkbox>
-              <mat-checkbox (change)="onStrategyChange($event)" value="Other">Other (Please specify)</mat-checkbox>
+              <!-- <mat-checkbox (change)="onStrategyChange($event)" value="Other">Other (Please specify)</mat-checkbox> -->
             </section>
             <mat-error *ngIf="surveyForm.get('strategies')?.invalid && surveyForm.get('strategies')?.touched">
               Please select at least one option.
@@ -109,7 +109,8 @@
             <mat-option value="Overcoming objections">Overcoming objections</mat-option>
             <mat-option value="Building relationships">Building relationships</mat-option>
             <mat-option value="Closing strategies">Closing strategies</mat-option>
-            <mat-option value="Other">Other</mat-option>
+            <mat-option value="Business management skill">Business management skill</mat-option>
+            <!-- <mat-option value="Other">Other</mat-option> -->
           </mat-select>
           <mat-error *ngIf="surveyForm.get('trainingSupport')?.hasError('required') ">
               This answer is required
@@ -128,7 +129,7 @@
             <mat-option value="Online digital marketing app/website">Online digital marketing app/website</mat-option>
             <mat-option value="Ready-made presentation templates">Ready-made presentation templates</mat-option>
             <mat-option value="Social media marketing tools">Social media marketing tools</mat-option>
-            <mat-option value="Other">Other</mat-option>
+            <!-- <mat-option value="Other">Other</mat-option> -->
           </mat-select>
           <mat-error *ngIf="surveyForm.get('recruitmentTool')?.hasError('required') ">
               This answer is required

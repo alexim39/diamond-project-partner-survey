@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   template: `
     <section class="head">
       <article>
-        <h2>Understanding Recruitment Challenges in (C21FC) Network Marketing</h2>
+        <h2>Understanding Recruitment Challenges in (C21FG) Network Marketing</h2>
         <p>
           Thank you for taking the time to participate in this survey. Your insights will help us identify common
           challenges and develop strategies to improve recruitment efforts within our organization.
