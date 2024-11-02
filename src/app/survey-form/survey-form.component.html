@@ -8,7 +8,7 @@
         <div class="form-wrapper">
 
           <div class="range">
-            <h4>What do you believe is the reason why recruiting new partners is challenging?</h4>
+            <h4>What is your challenge in recruiting new partners?</h4>
             <section [ngClass]="{'invalid-field': surveyForm.get('challenges')?.invalid && surveyForm.get('challenges')?.touched}">
               <mat-checkbox (change)="onChallengeChange($event)" value="Lack of interest from prospects">Lack of interest from prospects</mat-checkbox>
               <mat-checkbox (change)="onChallengeChange($event)" value="Fear of rejection from prospects">Fear of rejection from prospects</mat-checkbox>
