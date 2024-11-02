@@ -32,7 +32,7 @@ import { LogoComponent } from './nav/logo.component';
     </div> -->
   </div>
   <div class="footer-copyright">
-    &copy; {{ currentYear }} <a href="http://async.ng" target="_blank">Async Groups.</a> All rights reserved.
+    &copy; {{ currentYear }}, <a href="http://async.ng" target="_blank">Async Group.</a> All rights reserved.
   </div>
 </footer>
 

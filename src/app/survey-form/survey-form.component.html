@@ -1,14 +1,14 @@
 
 <section class="body">
     <article class="writeup">
-      <h3>Get Started - Diamond Project Survey</h3>
+      <h3>Get Started - Diamond Project Partners Survey</h3>
       
       <form [formGroup]="surveyForm" (submit)="onSubmit()">
 
         <div class="form-wrapper">
 
           <div class="range">
-            <h4>What do you believe is the primary reason why recruiting new members in network marketing is challenging?</h4>
+            <h4>What do you believe is the reason why recruiting new partners is challenging?</h4>
             <section [ngClass]="{'invalid-field': surveyForm.get('challenges')?.invalid && surveyForm.get('challenges')?.touched}">
               <mat-checkbox (change)="onChallengeChange($event)" value="Lack of interest from prospects">Lack of interest from prospects</mat-checkbox>
               <mat-checkbox (change)="onChallengeChange($event)" value="Fear of rejection from prospects">Fear of rejection from prospects</mat-checkbox>
@@ -32,7 +32,7 @@
           </div>
 
           <div class="range">
-            <h4>On a scale of 1 to 5, how difficult do you find recruiting in network marketing?</h4>
+            <h4>On a scale of 1 to 5, how difficult do you find recruiting new partner?</h4>
             <mat-radio-group aria-label="Select an age range" formControlName="difficulty"
               [ngClass]="{'invalid-field': surveyForm.get('difficulty')?.invalid && surveyForm.get('difficulty')?.touched}">
               <mat-radio-button value="1 - Not difficult">1 - Not difficult</mat-radio-button>
@@ -53,7 +53,7 @@
         <div class="form-wrapper">
 
           <div class="range">
-            <h4>Which recruitment Methods or strategies have you tried that were effective?</h4>
+            <h4>Which recruitment Methods have you tried that were effective?</h4>
             <section [ngClass]="{'invalid-field': surveyForm.get('strategies')?.invalid && surveyForm.get('strategies')?.touched}">
               <mat-checkbox (change)="onStrategyChange($event)" value="Social media outreach">Social media outreach</mat-checkbox>
               <mat-checkbox (change)="onStrategyChange($event)" value="In-person networking events">In-person networking events</mat-checkbox>
@@ -174,7 +174,7 @@
         </div>
 
         <mat-form-field appearance="outline" [ngClass]="{'invalid-field': surveyForm.get('misconception')?.invalid && surveyForm.get('misconception')?.touched}">
-          <small style="font-weight: bold;">In your opinion, what is the most common misconception about network marketing that discourages people from joining?</small>
+          <small style="font-weight: bold;">In your opinion, what is the most common misconception about network marketing that discourages partners from joining?</small>
           <!-- <mat-label>In your opinion, what is the most common misconception about network marketing that discourages people from joining?</mat-label> -->
           <textarea matInput formControlName="misconception"></textarea>
           <mat-error *ngIf="surveyForm.get('misconception')?.hasError('required') ">

@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
   styles: [
     `
       .head {
-        background: #050111;
+        background: #02052c;
         padding: 2em 1em;
         display: flex;
         justify-content: center;
