@@ -23,29 +23,28 @@ import Swal from 'sweetalert2';
  * @title Survey Form
  */
 @Component({
-  selector: 'async-survey-form',
-  standalone: true,
-  providers: [SurveyFormService],
-  imports: [
-    MatButtonModule, 
-    MatDividerModule,
-    MatSliderModule, 
-    MatProgressBarModule, 
-    MatCheckboxModule, 
-    MatRadioModule, 
-    CommonModule, 
-    ReactiveFormsModule, 
-    RouterModule, 
-    MatIconModule, 
-    MatExpansionModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule, 
-    MatSelectModule
-  ],
-  templateUrl: 'survey-form.component.html',
-  styleUrls: ['survey-form.component.scss'],
+    selector: 'async-survey-form',
+    providers: [SurveyFormService],
+    imports: [
+        MatButtonModule,
+        MatDividerModule,
+        MatSliderModule,
+        MatProgressBarModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        CommonModule,
+        ReactiveFormsModule,
+        RouterModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule
+    ],
+    templateUrl: 'survey-form.component.html',
+    styleUrls: ['survey-form.component.scss']
 })
 export class SurveyFormComponent implements OnDestroy, OnInit {
   surveyForm: FormGroup = new FormGroup({});

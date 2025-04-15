@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
  * @title Survey Banner
  */
 @Component({
-  selector: 'async-banner',
-  template: `
+    selector: 'async-banner',
+    template: `
     <section class="head">
       <article>
         <h2>Understanding Recruitment Challenges in (C21FG) Network Marketing</h2>
@@ -20,8 +20,8 @@ import { Component } from '@angular/core';
       </article>
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .head {
         background: #02052c;
         padding: 2em 1em;
@@ -78,8 +78,7 @@ import { Component } from '@angular/core';
         }
       }
     `,
-  ],
-  standalone: true,
-  imports: [],
+    ],
+    imports: []
 })
 export class BannerComponent {}

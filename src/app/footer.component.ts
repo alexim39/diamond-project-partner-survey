@@ -6,8 +6,8 @@ import { LogoComponent } from './nav/logo.component';
  * @title Survey Banner
  */
 @Component({
-  selector: 'async-survey-footer',
-  template: `
+    selector: 'async-survey-footer',
+    template: `
 
 
 
@@ -40,7 +40,7 @@ import { LogoComponent } from './nav/logo.component';
 
 
   `,
-  styles: `
+    styles: `
 
 
 
@@ -140,8 +140,7 @@ import { LogoComponent } from './nav/logo.component';
 
 
   `,
-  standalone: true,
-  imports: [LogoComponent],
+    imports: [LogoComponent]
 })
 export class SurveyFooterComponent {
     currentYear: number;

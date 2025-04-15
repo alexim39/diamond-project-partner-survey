@@ -9,11 +9,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
-  selector: 'async-nav',
-  standalone: true,
-  imports: [MatToolbarModule, MatIconModule, MatMenuModule, MatButtonModule, MatProgressBarModule, LogoComponent, CommonModule, RouterModule],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss'
+    selector: 'async-nav',
+    imports: [MatToolbarModule, MatIconModule, MatMenuModule, MatButtonModule, MatProgressBarModule, LogoComponent, CommonModule, RouterModule],
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.scss'
 })
 export class NavComponent implements OnInit {
   isMobile!: boolean;
