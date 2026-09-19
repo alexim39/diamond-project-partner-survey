@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 
 export interface SurveyForm {
@@ -21,9 +22,9 @@ export interface SurveyForm {
 
 @Injectable()
 export class SurveyFormService {
-  // Define API
-  api = 'https://diamondprojectapi-y6u04o8b.b4a.run/';
-  //api = 'http://localhost:3000';
+  // Backend follows the environment (dev → localhost:3000,
+  // prod → live Back4App). Never hardcode a host here.
+  api = environment.apiUrl + '/';
   constructor(private http: HttpClient) {}
   /*========================================
     CRUD Methods for consuming RESTful API
