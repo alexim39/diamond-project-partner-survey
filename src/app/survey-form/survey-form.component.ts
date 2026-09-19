@@ -148,7 +148,7 @@ export class SurveyFormComponent implements OnDestroy, OnInit {
             Swal.fire({
               position: "bottom",
               icon: 'info',
-              text: 'Server error occurred, please try again',
+              text: (error as { message?: string })?.message ?? 'Server error occurred, please try again',
               showConfirmButton: false,
               timer: 4000
             });

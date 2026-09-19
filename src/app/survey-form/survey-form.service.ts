@@ -24,7 +24,7 @@ export interface SurveyForm {
 export class SurveyFormService {
   // Backend follows the environment (dev → localhost:3000,
   // prod → live Back4App). Never hardcode a host here.
-  api = environment.apiUrl + '/';
+  api = environment.apiUrl;
   constructor(private http: HttpClient) {}
   /*========================================
     CRUD Methods for consuming RESTful API
