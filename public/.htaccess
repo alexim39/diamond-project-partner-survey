@@ -1,0 +1,11 @@
+# Diamond Project survey (:4202 / survey.c21fg.online) — SPA fallback.
+# Serves index.html for deep links so reloads never hit a host 404.
+# Existing files/dirs pass through untouched.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
