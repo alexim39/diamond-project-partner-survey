@@ -24,6 +24,11 @@
       flex-direction: column;
       padding: 0 1em;
 
+      /* Standalone rows run full-bleed; pairs share the row evenly. */
+      .q-section mat-form-field {
+        width: 100%;
+      }
+
       .q-section {
         background: var(--dp-surface);
         border: 1px solid var(--dp-line);
@@ -43,18 +48,21 @@
         border-bottom: 2px solid var(--dp-gold);
       }
 
-      .form-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        .form-wrapper {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 0.75em;
 
-        mat-form-field {
-          width: 45%;
-        }
+          mat-form-field {
+            flex: 1 1 0;
+            min-width: 0;
+          }
 
-        .range {
-          width: 45%;
-          margin-bottom: 25px;
+          .range {
+            flex: 1 1 0;
+            min-width: 0;
+            margin-bottom: 25px;
 
           h4 {
             text-align: left;
@@ -181,6 +189,10 @@
           margin-bottom: 1em;
           button {
             width: 40%;
+            min-width: 220px;
+            min-height: 48px;
+            font-size: 1.05em;
+            font-weight: 700;
           }
         }
       }
