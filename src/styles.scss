@@ -1,7 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* Diamond Project survey — brand tokens + base.
+ * Light-only public research form: ink + gold identity, Roboto body,
+ * Garamond reserved for the hero headline as an editorial accent. */
+
+:root {
+  --dp-gold: #d4a941;
+  --dp-gold-bright: #ffc107;
+  --dp-gold-soft: #f3e8d2;
+  --dp-gold-ink: #6e5218;
+  --dp-ink: #0b0a09;
+  --dp-navy: #02052c;
+  --dp-paper: #faf8f3;
+  --dp-surface: #ffffff;
+  --dp-text: #1c1a15;
+  --dp-muted: #6e6e6e;
+  --dp-line: #e4ddcd;
+  --dp-success: #1b5e20;
+  --dp-success-bg: #c8e6c9;
+  --dp-error: #b71c1c;
+  --dp-error-bg: #fdecea;
+  --dp-radius: 10px;
+}
 
 html, body { height: 100%; }
-//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body { margin: 0; font-family: "Lucida Console", "Courier New", monospace; }
-//body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--dp-paper);
+  color: var(--dp-text);
+}
 
+:focus-visible {
+  outline: 2px solid var(--dp-gold);
+  outline-offset: 2px;
+}

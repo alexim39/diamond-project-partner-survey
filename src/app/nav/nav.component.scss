@@ -3,7 +3,13 @@
 }
 
 .survey-toolbar {
-    background: #02052c;
-    color: white;
+    background: var(--dp-ink);
+    color: #f3ecdd;
+    a, button {
+      color: #f3ecdd;
+    }
+    mat-icon {
+      color: var(--dp-gold);
+    }
 }
 

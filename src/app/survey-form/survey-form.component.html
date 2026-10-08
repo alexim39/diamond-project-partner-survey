@@ -1,10 +1,12 @@
-
+﻿
 <section class="body">
     <article class="writeup">
       <h3>Get Started - Diamond Project Partners Survey</h3>
       
       <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
 
+        <section class="q-section" aria-label="Your challenges">
+          <p class="q-eyebrow">01 · Your challenges</p>
         <div class="form-wrapper">
 
           <div class="range">
@@ -45,10 +47,13 @@
             </mat-error>
           </div>
         </div>
+        </section>
 
 
 
 
+        <section class="q-section" aria-label="What works today">
+          <p class="q-eyebrow">02 - What works today</p>
         <div class="form-wrapper">
 
           <div class="range">
@@ -82,10 +87,13 @@
           </div>
 
         </div>
+        </section>
 
 
 
 
+        <section class="q-section" aria-label="What would help">
+          <p class="q-eyebrow">03 - What would help</p>
         <mat-form-field appearance="outline" [ngClass]="{'invalid-field': surveyForm.get('trainingSupport')?.invalid && surveyForm.get('trainingSupport')?.touched}">
           <mat-label>What kind of training or support would be most helpful to improve your recruitment skills?</mat-label>
           <!-- <mat-label>What kind of training or support would be most helpful to improve your recruitment skills? </mat-label> -->
@@ -123,9 +131,12 @@
               This answer is required
             </mat-error>
         </mat-form-field>
+        </section>
 
 
 
+        <section class="q-section" aria-label="Your habits">
+          <p class="q-eyebrow">04 - Your habits</p>
         <div class="form-wrapper">
 
           <div class="range">
@@ -205,7 +216,12 @@
             </mat-error>
           </div>
         </div>
+        </section>
 
+
+
+        <section class="q-section" aria-label="About you">
+          <p class="q-eyebrow">05 - About you</p>
         <div class="form-wrapper">
 
           <mat-form-field appearance="outline"  [ngClass]="{'invalid-field': surveyForm.get('phoneNumber')?.invalid && surveyForm.get('phoneNumber')?.touched}">
@@ -259,12 +275,13 @@
           This answer is required
           </mat-error>
       </mat-form-field>
+        </section>
 
 
         <mat-progress-bar mode="indeterminate" *ngIf="isSpinning"></mat-progress-bar><br>
 
         <div class="btn">
-          <button mat-raised-button color="primary" [disabled]="isSpinning">Submit <i class="fa fa-angle-double-right"></i></button>
+          <button mat-raised-button color="primary" [disabled]="isSpinning">Submit <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
         </div>
 
       </form>

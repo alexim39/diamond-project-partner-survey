@@ -14,7 +14,7 @@ import { LogoComponent } from './nav/logo.component';
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-logo">
-    <span class="logo"><async-logo></async-logo></span>
+    <span class="logo"><async-logo color="#f3ecdd"></async-logo></span>
     </div>
 
   </div>
@@ -34,13 +34,14 @@ import { LogoComponent } from './nav/logo.component';
 
 // SCSS Styles for a Modern Footer
 .footer {
-  background-color: #f1f1f1;
-  color: #1a1a1a;
+  background-color: var(--dp-ink);
+  color: #f3ecdd;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border-top: 3px solid var(--dp-gold);
 
   .footer-container {
     display: flex;
@@ -58,11 +59,14 @@ import { LogoComponent } from './nav/logo.component';
 
   .footer-copyright {
     a {
-      color: #595959;
+      color: var(--dp-gold);
+      text-decoration: none;
+    }
+    a:hover {
       text-decoration: underline;
     }
     font-size: 0.8rem;
-    color: #595959;
+    color: rgba(243, 236, 221, 0.75);
     margin-top: 1rem;
   }
 }
