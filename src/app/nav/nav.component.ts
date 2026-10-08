@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,10 +15,6 @@ import {MatMenuModule} from '@angular/material/menu';
     styleUrl: './nav.component.scss'
 })
 export class NavComponent implements OnInit {
-  isMobile!: boolean;
-  isTablet!: boolean;
-  isDesktop!: boolean;
-
   isLoading: boolean = false; // Flag for loading state
 
   constructor(private router: Router  ) {
@@ -32,11 +28,6 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-   // scroll to top when clicked
-   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 }

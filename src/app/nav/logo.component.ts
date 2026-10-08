@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
       span {
         display: flex;
         justify-content: center;
-        font-family: "Audiowide", sans-serif;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
         font-size: 0.9em;
         font-weight: bold;
         img {

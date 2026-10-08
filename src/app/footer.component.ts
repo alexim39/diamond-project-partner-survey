@@ -17,22 +17,9 @@ import { LogoComponent } from './nav/logo.component';
     <span class="logo"><async-logo></async-logo></span>
     </div>
 
-    <!-- <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a href="#privacy">Privacy Policy</a>
-    </div>
-
-    <div class="footer-socials">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    </div> -->
   </div>
   <div class="footer-copyright">
-    &copy; {{ currentYear }}, <a href="http://async.ng" target="_blank">Async Group.</a> All rights reserved.
+    &copy; {{ currentYear }}, <a href="https://async.ng" target="_blank" rel="noopener">Async Group.</a> All rights reserved.
   </div>
 </footer>
 
@@ -47,8 +34,8 @@ import { LogoComponent } from './nav/logo.component';
 
 // SCSS Styles for a Modern Footer
 .footer {
-  background-color: #f1f1f1;  // Dark background color
-  color: #1a1a1a;        // Light text color
+  background-color: #f1f1f1;
+  color: #1a1a1a;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -69,46 +56,13 @@ import { LogoComponent } from './nav/logo.component';
     margin-bottom: 1rem;
   }
 
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-
-    a {
-      color: #f1f1f1;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #4db8ff;  // Hover effect color
-      }
-    }
-  }
-
-  .footer-socials {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    a {
-      color: #f1f1f1;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #4db8ff;
-      }
-    }
-  }
-
   .footer-copyright {
     a {
-      color: #aaaaaa;
-      text-decoration: none;
+      color: #595959;
+      text-decoration: underline;
     }
     font-size: 0.8rem;
-    color: #aaaaaa;
+    color: #595959;
     margin-top: 1rem;
   }
 }
@@ -123,16 +77,6 @@ import { LogoComponent } from './nav/logo.component';
     .footer-container {
       flex-direction: row;
       justify-content: space-between;
-    }
-
-    .footer-links {
-      gap: 2rem;
-      margin-bottom: 0;
-    }
-
-    .footer-socials {
-      gap: 1.5rem;
-      margin-bottom: 0;
     }
   }
 }

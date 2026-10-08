@@ -1,14 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { RouterModule, Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators, FormArray, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -16,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SurveyForm, SurveyFormService } from './survey-form.service';
-import { MatSliderModule } from '@angular/material/slider';
 import Swal from 'sweetalert2';
 
 /**
@@ -27,20 +20,13 @@ import Swal from 'sweetalert2';
     providers: [SurveyFormService],
     imports: [
         MatButtonModule,
-        MatDividerModule,
-        MatSliderModule,
         MatProgressBarModule,
         MatCheckboxModule,
         MatRadioModule,
         CommonModule,
         ReactiveFormsModule,
-        RouterModule,
-        MatIconModule,
-        MatExpansionModule,
         MatFormFieldModule,
         MatInputModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
         MatSelectModule
     ],
     templateUrl: 'survey-form.component.html',
@@ -52,7 +38,6 @@ export class SurveyFormComponent implements OnDestroy, OnInit {
   isSpinning = false;
 
   constructor(
-    private router: Router,
     private fb: FormBuilder,
     private surveyService: SurveyFormService,
   ) { }
@@ -115,8 +100,9 @@ export class SurveyFormComponent implements OnDestroy, OnInit {
       formArray.push(this.fb.control(event.source.value));
     } else {
       const index = formArray.controls.findIndex(x => x.value === event.source.value);
-      formArray.removeAt(index);
+      if (index >= 0) formArray.removeAt(index);
     }
+    formArray.markAsTouched();
   }
 
   // Scroll to top when clicked
@@ -147,27 +133,38 @@ export class SurveyFormComponent implements OnDestroy, OnInit {
             this.isSpinning = false;
             Swal.fire({
               position: "bottom",
-              icon: 'info',
+              icon: 'error',
               text: (error as { message?: string })?.message ?? 'Server error occurred, please try again',
-              showConfirmButton: false,
-              timer: 4000
+              showConfirmButton: true
             });
           }
         )
       );
     } else {
       this.isSpinning = false;
-      //console.log("Form is invalid:", this.surveyForm.errors);
-      //console.log("Invalid controls:", this.findInvalidControls());
       this.surveyForm.markAllAsTouched();
+      this.scrollToFirstError();
     }
   }
 
-  // Helper method to mark all form controls as touched
+  /** Focus the first invalid field so users see what to fix. */
+  private scrollToFirstError(): void {
+    const invalid = Object.keys(this.surveyForm.controls).find((k) => this.surveyForm.get(k)?.invalid);
+    if (!invalid) return;
+    const el = document.querySelector(`[formControlName="${invalid}"]`);
+    if (el instanceof HTMLElement) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.focus({ preventScroll: true });
+    }
+  }
+
+  // Helper method to mark all form controls as touched (arrays included —
+  // group errors read the array's own touched state, not just its children).
   private markAllAsTouched() {
     Object.keys(this.surveyForm.controls).forEach(controlName => {
       const control = this.surveyForm.get(controlName);
       if (control instanceof FormArray) {
+        control.markAsTouched();
         control.controls.forEach(ctrl => ctrl.markAsTouched());
       } else {
         control?.markAsTouched();

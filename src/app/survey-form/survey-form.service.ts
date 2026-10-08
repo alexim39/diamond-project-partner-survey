@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 
 export interface SurveyForm {
   challenges: string[];
-  otherChallenges?: string;
   difficulty: string;
   strategies: string[];
-  otherStrategies?: string;
   targetAudience: string[];
   trainingSupport: string;
   recruitmentTool: string;
   businessMotivation: string;
   recruitmentAttempt: string;
+  misconception: string;
+  comfortWithTech: string;
+  businessTimeDedication: string;
+  phoneNumber: string;
+  reservationCode?: string;
+  name: string;
+  gender: string;
+  interestedInTraining: string;
 }
 
 
@@ -53,12 +59,11 @@ export class SurveyFormService {
   }
 
 
-  // user submit survey
+  // user submit survey (no retry — a retried POST can double-submit)
   submit(formData: SurveyForm): Observable<any> {
-    //console.log('form record', formData);
     return this.http
       .post<any>(this.api + '/survey/partners', formData)
-      .pipe(retry(1), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   

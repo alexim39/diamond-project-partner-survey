@@ -42,9 +42,20 @@
             font-size: 1.3em;
           }
 
-          mat-radio-group, section {
+          mat-radio-group, fieldset {
             display: flex;
             flex-wrap: wrap;
+            border: none;
+            margin: 0;
+            padding: 0;
+
+            legend {
+              text-align: left;
+              font-size: 1.3em;
+              font-weight: bold;
+              padding: 0;
+              margin-bottom: 0.5em;
+            }
 
             mat-radio-button, mat-checkbox {
               border-left: 1px dotted #ccc;
@@ -109,17 +120,27 @@
           .range {
             width: 100%;
             margin-bottom: 15px;
-  
+
             h4 {
               font-size: 1em;
               font-weight: bold;
             }
-  
-            mat-radio-group, section {
+
+            mat-radio-group, fieldset {
               display: flex;
               flex-wrap: wrap;
               text-align: left;
-  
+              border: none;
+              margin: 0;
+              padding: 0;
+
+              legend {
+                font-size: 1em;
+                font-weight: bold;
+                padding: 0;
+                margin-bottom: 0.5em;
+              }
+
               mat-radio-button, mat-checkbox {
                 border-left: 1px dotted #ccc;
                 margin-right: 10px;

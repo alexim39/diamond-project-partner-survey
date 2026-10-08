@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     template: `
     <section class="head">
       <article>
-        <h2>Understanding Recruitment Challenges in (C21FG) Network Marketing</h2>
+        <h1>Understanding Recruitment Challenges in Network Marketing</h1>
         <p>
           Thank you for taking the time to participate in this survey. Your insights will help us identify common
           challenges and develop strategies to improve recruitment efforts within our organization.
@@ -34,7 +34,7 @@ import { Component } from '@angular/core';
           color: white;
           max-width: 800px;
           padding: 1em;
-          h2 {
+          h1 {
             font-family: 'Garamond', serif;
             font-size: 1.8em;
             margin-bottom: 0.5em;
@@ -57,7 +57,7 @@ import { Component } from '@angular/core';
 
         article {
           padding: 1em;
-          h2 {
+          h1 {
             font-size: 1.5em;
           }
           p {
@@ -69,7 +69,7 @@ import { Component } from '@angular/core';
       @media (max-width: 480px) {
         article {
           padding: 0.5em;
-          h2 {
+          h1 {
             font-size: 1.3em;
           }
           p {
